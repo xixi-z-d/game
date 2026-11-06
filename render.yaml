@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: draw-together
+    runtime: docker
+    plan: free
+    branch: main
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /healthz
+    autoDeploy: true
+    envVars:
+      - key: DRAW_ACCOUNTS_FILE
+        value: /app/data/users.json
